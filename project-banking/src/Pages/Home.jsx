@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import { FaShieldAlt, FaCreditCard, FaPiggyBank, FaMobileAlt, FaChevronLeft, FaChevronRight, FaUser, FaBuilding, FaChartLine, FaUniversity, FaClipboardList, FaSearch, FaLock, FaBan, FaExclamationTriangle } from 'react-icons/fa'
+import houseLoan from '../assets/house_loan.jpg'
 
 export default function Home(){
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -17,7 +18,7 @@ export default function Home(){
       title: "Home Loan",
       desc: "Get a Home Loan of up to ₹5 crore with quick processing",
       badge: "Ongoing Offer",
-      image: "/hl-offer.jpg"
+      image: houseLoan
     },
     {
       title: "Personal Loan",
@@ -61,7 +62,7 @@ export default function Home(){
             <div className="slide-content">
               <h1>{offers[currentSlide].title}</h1>
               <p>{offers[currentSlide].desc}</p>
-              <button className="apply-btn">APPLY NOW</button>
+              {/* <button className="apply-btn">APPLY NOW</button> */}
             </div>
               {currentSlide !== 0 && (
                 <div className="slide-image">

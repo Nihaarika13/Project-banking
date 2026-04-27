@@ -126,7 +126,7 @@ export default function Register() {
               <div className="register-icon-header">
                 <FaUser className="register-badge" />
               </div>
-              <h2>Open Your Account</h2>
+              <h2>Open Your Savings Account</h2>
               <p>Join our banking family today</p>
             </div>
 

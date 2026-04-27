@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaShieldAlt } from 'react-icons/fa';
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
@@ -21,8 +23,15 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempt:', formData);
+    const email = formData.username.trim().toLowerCase();
+    const password = formData.password;
+
+    if (email === 'admin-vjn@gmail.com' && password === 'admin@123') {
+      navigate('/admin-dashboard');
+      return;
+    }
+
+    navigate('/user-dashboard');
   };
 
   return (
@@ -48,7 +57,7 @@ export default function Login() {
 
               <form onSubmit={handleSubmit} className="login-form">
                 <div className="form-group">
-                  <label htmlFor="username">Username / Customer ID</label>
+                  <label htmlFor="username">Email / Customer ID</label>
                   <div className="input-group">
                     <FaUser className="input-icon" />
                     <input
