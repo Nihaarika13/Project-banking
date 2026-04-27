@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function Header(){
     const [showLogin, setShowLogin] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            setIsScrolled(scrollTop > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const isScrolled = true;
 
     const handleMouseEnter = (dropdown) => {
         setActiveDropdown(dropdown);
@@ -27,7 +17,7 @@ export default function Header(){
 
     return(
         <>
-        <div className={`Header ${isScrolled ? 'fixed' : ''}`}>
+        <div className="Header fixed">
             <Link to="/" className="logo-link">
                 <div className="logo">
                     <h2>PavitraBandham Cooperative Bank</h2>
