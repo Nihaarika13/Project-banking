@@ -79,7 +79,7 @@ main {
   position: relative;
   z-index: 1;
   max-width: 700px;
-  padding: 0;
+  padding: 0; 
 }
 
 .carousel-slide.welcome-slide .slide-image {
@@ -93,6 +93,10 @@ main {
 .carousel-slide.welcome-slide p {
   font-size: 1.1rem;
   max-width: 620px;
+}
+
+.carousel-slide{
+  margin-top: 70px;
 }
 
 .carousel-slide h1 {
