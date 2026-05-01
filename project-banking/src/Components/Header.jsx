@@ -119,8 +119,20 @@ export default function Header(){
                         </div>
                     </div>
 
-                    <Link to="/about">About Us</Link>
-                    <Link to="/contact">Contact Us</Link>
+                                        <a href="#aboutus-section" onClick={e => {
+                                            e.preventDefault();
+                                            const about = document.getElementById('aboutus-section');
+                                            if (about) {
+                                                about.scrollIntoView({ behavior: 'smooth' });
+                                            }
+                                        }}>About Us</a>
+                                        <a href="#footer-contact" onClick={(e) => {
+                                            e.preventDefault();
+                                            const footer = document.getElementById('footer-contact');
+                                            if (footer) {
+                                                footer.scrollIntoView({ behavior: 'smooth' });
+                                            }
+                                        }}>Contact Us</a>
                     <button className="hamburger" onClick={() => setShowLogin(!showLogin)}>
                     ☰
                     </button>
@@ -130,11 +142,16 @@ export default function Header(){
                 )}
             </div>
         </div>
-        <div className={`loginDiv ${showLogin ? "open" : ""}`}>
-            <button onClick={() => window.location.href="/login"}>Login</button>
-            <button onClick={() => window.location.href="/register"}>New User Register</button>
-            <button onClick={() => window.location.href="/onlineAccount"}>Apply for Online Account</button>
-        </div>
+                <div className={`loginDiv ${showLogin ? "open" : ""}`}>
+                        <span className="loginDiv-close" onClick={() => setShowLogin(false)} title="Close">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style={{transform: 'rotate(180deg)'}}>
+                                    <path d="M7 11H15M15 11L11 7M15 11L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                        </span>
+                        <button onClick={() => window.location.href="/login"}>Login</button>
+                        <button onClick={() => window.location.href="/register"}>New User Register</button>
+                        <button onClick={() => window.location.href="/onlineAccount"}>Apply for Online Account</button>
+                </div>
  
         </>
     )

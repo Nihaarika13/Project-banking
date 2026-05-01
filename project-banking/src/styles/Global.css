@@ -37,16 +37,18 @@ main {
 .hero-carousel {
   position: relative;
   padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-}
+  /* background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);*/
+  background-color: #0b376e
+  
+} 
 
 .carousel-container {
   max-width: 1400px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   display: flex;
   align-items: center;
-  gap: var(--spacing-2xl);
-  position: relative;
+  /*gap: var(--spacing-2xl);*/
+  /*position: relative;*/
 }
 
 .carousel-slide {
@@ -164,11 +166,11 @@ main {
 }
 
 .carousel-arrow.prev {
-  left: -22px;
+  left: 20px;
 }
 
 .carousel-arrow.next {
-  right: -22px;
+  right: 20px;
 }
 
 .slide-image img {

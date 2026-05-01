@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import AboutUsSection from '../Components/AboutUsSection'
 import { FaShieldAlt, FaCreditCard, FaPiggyBank, FaMobileAlt, FaChevronLeft, FaChevronRight, FaUser, FaBuilding, FaChartLine, FaUniversity, FaClipboardList, FaSearch, FaLock, FaBan, FaExclamationTriangle } from 'react-icons/fa'
 import houseLoan from '../assets/house_loan.jpg'
 
@@ -17,27 +18,23 @@ export default function Home(){
     {
       title: "Home Loan",
       desc: "Get a Home Loan of up to ₹5 crore with quick processing",
-      badge: "Ongoing Offer",
-      image: houseLoan
+      badge: null,
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80"
     },
     {
       title: "Personal Loan",
       desc: "Get instant disbursement with no foreclosure charges",
-      badge: "Ongoing Offer",
-      image: "/pl-offer.jpg"
+      badge: null,
+      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1600&q=80"
     }
   ]
 
   return (
     <>
     <Header/>
-    <main>
-      {/* Trust Banner */}
-      {/* <section className="trust-banner">
-        <h2>Truth, Trust, Transparency</h2>
-      </section> */}
 
-      {/* Hero Carousel */}
+    <main>
+      {/* Hero Carousel (Banner) */}
       <section id="home" className="hero-carousel">
         <div className="carousel-container">
           <button
@@ -48,27 +45,18 @@ export default function Home(){
             <FaChevronLeft />
           </button>
             <div
-              className={`carousel-slide active ${currentSlide === 0 ? 'welcome-slide' : ''}`}
-              style={
-                currentSlide === 0
-                  ? {
-                      backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url(${offers[0].image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }
-                  : undefined
-              }
+              className={`carousel-slide active`}
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url(${offers[currentSlide].image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
             >
-            <div className="slide-content">
-              <h1>{offers[currentSlide].title}</h1>
-              <p>{offers[currentSlide].desc}</p>
-              {/* <button className="apply-btn">APPLY NOW</button> */}
-            </div>
-              {currentSlide !== 0 && (
-                <div className="slide-image">
-                  <img src={offers[currentSlide].image} alt={offers[currentSlide].title} />
-                </div>
-              )}
+              <div className="slide-content">
+                <h1>{offers[currentSlide].title}</h1>
+                <p>{offers[currentSlide].desc}</p>
+                {/* <button className="apply-btn">APPLY NOW</button> */}
+              </div>
           </div>
           <button
             className="carousel-arrow next"
@@ -90,7 +78,7 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Quick Categories */}
+      {/* Quick Categories (Service Request) */}
       <section id="services" className="quick-categories">
         <div className="categories-grid">
           <div className="category-card">
@@ -120,6 +108,52 @@ export default function Home(){
           </div>
         </div>
       </section>
+
+      {/* Featured Offers */}
+      <section className="featured-offers">
+        <h2>Offers for You!</h2>
+        <div className="offers-grid">
+          <div className="offer-card">
+            <div className="offer-badge">Hot Selling</div>
+            <h3>Credit Card</h3>
+            <p>Enjoy discounts on shopping, dining, entertainment and more with premium rewards!</p>
+            <div className="offer-actions">
+              <button className="btn-apply">APPLY</button>
+              <button className="btn-details">DETAILS</button>
+            </div>
+          </div>
+          <div className="offer-card">
+            <div className="offer-badge">Ongoing Offer</div>
+            <h3>Home Loan</h3>
+            <p>Get a Home Loan of up to ₹5 crore with quick processing and competitive rates.</p>
+            <div className="offer-actions">
+              <button className="btn-apply">APPLY</button>
+              <button className="btn-details">DETAILS</button>
+            </div>
+          </div>
+          <div className="offer-card">
+            <div className="offer-badge">Ongoing Offer</div>
+            <h3>Personal Loan</h3>
+            <p>Get instant disbursement with no foreclosure charges after 12 EMIs.</p>
+            <div className="offer-actions">
+              <button className="btn-apply">APPLY</button>
+              <button className="btn-details">DETAILS</button>
+            </div>
+          </div>
+          <div className="offer-card">
+            <div className="offer-badge">Ongoing Offer</div>
+            <h3>Fixed Deposits</h3>
+            <p>Invest in FDs with attractive interest rates without worrying about market fluctuations.</p>
+            <div className="offer-actions">
+              <button className="btn-apply">INVEST</button>
+              <button className="btn-details">DETAILS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <AboutUsSection />
 
       {/* Featured Offers */}
       <section className="featured-offers">

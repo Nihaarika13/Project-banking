@@ -1,0 +1,112 @@
+
+.aboutus-section {
+  padding: 70px 0 80px 0;
+  background: linear-gradient(120deg, var(--primary-light, #e3f2fd) 0%, var(--bg-light, #f7f7f7) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutus-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--accent, #1976d2) 0%, transparent 70%);
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.aboutus-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, var(--primary-dark, #1a237e) 0%, transparent 70%);
+  opacity: 0.10;
+  z-index: 0;
+}
+
+.aboutus-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutus-main {
+  flex: 2;
+  background: var(--white, #fff);
+  padding: 40px 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 32px 0 rgba(25, 118, 210, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.aboutus-main:hover {
+  box-shadow: 0 8px 48px 0 rgba(25, 118, 210, 0.18);
+}
+
+.aboutus-main h2 {
+  margin-bottom: 18px;
+  color: var(--primary-dark, #1a237e);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary-dark, #1a237e), var(--accent, #1976d2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.aboutus-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.aboutus-card {
+  background: var(--white, #fff);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.08);
+  padding: 22px 18px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.aboutus-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, var(--accent, #1976d2) 0%, transparent 70%);
+  opacity: 0.13;
+  z-index: 0;
+}
+
+.aboutus-card:hover {
+  box-shadow: 0 6px 32px 0 rgba(25, 118, 210, 0.16);
+}
+
+.aboutus-card h4 {
+  margin-bottom: 8px;
+  color: var(--accent, #1976d2);
+  font-size: 1.2rem;
+  font-weight: 700;
+}

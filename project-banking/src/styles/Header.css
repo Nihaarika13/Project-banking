@@ -1,3 +1,25 @@
+.loginDiv-close {
+  color: var(--white);
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: color 0.2s;
+}
+.loginDiv-close:hover {
+  color: var(--accent);
+}
 /* Header Styles */
 .Header {
   background-color: var(--white);
@@ -43,7 +65,8 @@
 }
 
 .logo p {
-  color: var(--accent);
+ /*color: var(--accent);*/
+  color:#d19929;
   margin: 0;
   font-style: italic;
   font-size: 0.85rem;
@@ -194,7 +217,7 @@
   gap: var(--spacing-md);
   padding-top: 50px;
   transition: right var(--transition-base);
-  z-index: var(--z-sidebar);
+  z-index: 1200;
 }
 
 .loginDiv.open {
